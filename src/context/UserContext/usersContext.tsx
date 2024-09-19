@@ -6,20 +6,30 @@ import Cookies from "js-cookie";
 
 import { isEmpty } from "lodash";
 
+import { IChildrenProps } from "../../interfaces/reactProps";
 import { API } from "../../api";
 import {
   ICreateUser,
   IUpdateUser,
+  IUserContext,
   IUserLogin,
 } from "../../interfaces/UserInterfaces";
 
-const UserContext = createContext({});
 
-interface IChildren {
-  children: React.ReactNode;
-}
+const UserContext = createContext<IUserContext>({
+  user: {},
+  token: "",
+  setUser: () => {},
+  getUser: async () => Promise.resolve(), // Changed to return a Promise
+  loginUser: async () => Promise.resolve(), // Changed to return a Promise
+  getUserById: async () => Promise.resolve(), // Changed to return a Promise
+  createUser: async () => Promise.resolve(""), // Changed to return a Promise
+  updateUser: async () => Promise.resolve(), // Changed to return a Promise
+  deleteUser: async () => Promise.resolve(), // Changed to return a Promise
+  setToken: () => {},
+});
 
-export const UserProvider = ({ children }: IChildren) => {
+export const UserProvider = ({ children }: IChildrenProps) => {
   const [user, setUser] = useState({});
   const [isFetched, setIsFetched] = useState(false);
   const [token, setToken] = useState(Cookies.get("auth_token"));
