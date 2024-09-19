@@ -4,7 +4,7 @@ import { Container, FormLogin } from "./styles";
 import { IUserContext } from "../../interfaces/UserInterfaces";
 import { useNavigate } from "react-router-dom";
 
-export const LoginPage = ({}) => {
+export const RegisterPage = ({}) => {
   const navigate = useNavigate();
   const { setUser, loginUser }: IUserContext = useContext(UserContext);
   return (
@@ -14,9 +14,9 @@ export const LoginPage = ({}) => {
         <input></input>
         <button type="submit"></button>
         <p onClick={() => {
-            navigate("/register");
+            navigate("/login");
           }}>
-          Não e registrado?
+          Já é registrado?
         </p>
       </FormLogin>
     </Container>
