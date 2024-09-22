@@ -20,12 +20,12 @@ const UserContext = createContext<IUserContext>({
   user: {},
   token: "",
   setUser: () => {},
-  getUser: async () => Promise.resolve(), // Changed to return a Promise
-  loginUser: async () => Promise.resolve(), // Changed to return a Promise
-  getUserById: async () => Promise.resolve(), // Changed to return a Promise
-  createUser: async () => Promise.resolve(""), // Changed to return a Promise
-  updateUser: async () => Promise.resolve(), // Changed to return a Promise
-  deleteUser: async () => Promise.resolve(), // Changed to return a Promise
+  getUser: async () => Promise.resolve(),
+  loginUser: async () => Promise.resolve(),
+  getUserById: async () => Promise.resolve(),
+  createUser: async () => Promise.resolve(""),
+  updateUser: async () => Promise.resolve(),
+  deleteUser: async () => Promise.resolve(),
   setToken: () => {},
 });
 
