@@ -3,6 +3,7 @@ import UserContext from "../../context/UserContext/usersContext";
 import { Container, FormLogin } from "./styles";
 import { IUserContext } from "../../interfaces/UserInterfaces";
 import { useNavigate } from "react-router-dom";
+import { FcGoogle } from "react-icons/fc";
 
 export const RegisterPage = ({}) => {
   const navigate = useNavigate();
@@ -10,9 +11,18 @@ export const RegisterPage = ({}) => {
   return (
     <Container>
       <FormLogin>
-        <input></input>
-        <input></input>
-        <button type="submit"></button>
+        <div>
+          <label>Email</label>
+          <input></input>
+        </div>
+        <div>
+          <label>Senha</label>
+          <input></input>
+        </div>
+        <button type="submit">Criar conta</button>
+        <div>
+          <FcGoogle />
+        </div>
         <p onClick={() => {
             navigate("/login");
           }}>

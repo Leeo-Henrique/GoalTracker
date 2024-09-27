@@ -7,15 +7,24 @@ import { useNavigate } from "react-router-dom";
 export const LoginPage = ({}) => {
   const navigate = useNavigate();
   const { setUser, loginUser }: IUserContext = useContext(UserContext);
+
   return (
     <Container>
       <FormLogin>
-        <input></input>
-        <input></input>
-        <button type="submit"></button>
-        <p onClick={() => {
+        <div>
+          <label>Email</label>
+          <input></input>
+        </div>
+        <div>
+          <label>Senha</label>
+          <input></input>
+        </div>
+        <button type="submit">Entrar</button>
+        <p
+          onClick={() => {
             navigate("/register");
-          }}>
+          }}
+        >
           Não e registrado?
         </p>
       </FormLogin>
