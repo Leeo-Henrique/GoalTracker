@@ -17,6 +17,7 @@ export interface IUserContext {
   user: {};
   token: string | undefined;
   loginUser: (data: IUserLogin) => Promise<any>;
+  loginUserGoogle: (data: IUserLogin) => Promise<any>;
   getUser: (token: string) => Promise<any>;
   getUserById: (userId: number) => Promise<any>;
   createUser: (data: ICreateUser) => Promise<string>;

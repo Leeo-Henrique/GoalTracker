@@ -3,6 +3,7 @@ import UserContext from "../../context/UserContext/usersContext";
 import { Container, FormLogin } from "./styles";
 import { IUserContext } from "../../interfaces/UserInterfaces";
 import { useNavigate } from "react-router-dom";
+import { FcGoogle } from "react-icons/fc";
 
 export const LoginPage = ({}) => {
   const navigate = useNavigate();
@@ -18,6 +19,9 @@ export const LoginPage = ({}) => {
         <div>
           <label>Senha</label>
           <input></input>
+        </div>
+        <div>
+          <FcGoogle />
         </div>
         <button type="submit">Entrar</button>
         <p

@@ -1,4 +1,8 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
-export const Container = styled.main``
-export const FormLogin = styled.form``
+export const Container = styled.main``;
+export const FormLogin = styled.form`
+  p {
+    cursor: pointer;
+  }
+`;

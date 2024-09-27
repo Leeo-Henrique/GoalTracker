@@ -8,6 +8,7 @@ import { isEmpty } from "lodash";
 
 import { IChildrenProps } from "../../interfaces/reactProps";
 import { API } from "../../api";
+
 import {
   ICreateUser,
   IUpdateUser,
@@ -26,6 +27,7 @@ const UserContext = createContext<IUserContext>({
   createUser: async () => Promise.resolve(""),
   updateUser: async () => Promise.resolve(),
   deleteUser: async () => Promise.resolve(),
+  loginUserGoogle: async () => Promise.resolve(),
   setToken: () => {},
 });
 
@@ -55,6 +57,13 @@ export const UserProvider = ({ children }: IChildrenProps) => {
       return data;
     });
     return res;
+  };
+  const loginUserGoogle = async () => {
+    // const res = await signInWithPopup(auth, provider).then(({ user }) => {
+    //   setUser(user);
+    //   return user
+    // });
+    // return res
   };
 
   const getUserById = async (user_id: number) => {
@@ -106,6 +115,7 @@ export const UserProvider = ({ children }: IChildrenProps) => {
         updateUser,
         deleteUser,
         setToken,
+        loginUserGoogle
       }}
     >
       {children}
